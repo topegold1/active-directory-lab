@@ -1,73 +1,51 @@
-# Active Directory Lab – Windows Server 2025
-
+# Active Directory Home Lab (Cybersecurity Lab)
 
 ## Overview
-This project documents my hands-on Active Directory lab built using Windows Server 2025 in a virtualized environment.
 
-The goal of this lab is to strengthen my skills in:
-- Identity & Access Management (IAM)
-- Active Directory Administration
-- Group Policy Management
-- User Lifecycle Management
-- Role-Based Access Control (RBAC)
+This project simulates a small enterprise network using Windows Server Active Directory inside a virtualized lab environment.
+The purpose of this lab is to understand how corporate networks function and how attackers target identity infrastructure.
+
+The lab will later be used to practice detection, monitoring, and Active Directory attacks.
 
 ---
 
-## Lab Environment
+## Lab Goals
 
-- Hypervisor: VirtualBox
-- Server OS: Windows Server 2025
-- Domain Name: company.local
-- Domain Controller: DC01
-- Network Type: Internal Network (LABNET)
-
----
-
-## Configurations Completed
-
-- Installed and configured Active Directory Domain Services (AD DS)
-- Promoted server to Domain Controller
-- Configured static IP addressing
-- Configured DNS
-- Created Organizational Units (OUs)
-- Created users and security groups
-- Implemented Role-Based Access Control (RBAC)
-- Configured Group Policy Objects (GPOs)
+* Build a Domain Controller
+* Configure DNS & Static IP addressing
+* Join client machines to the domain
+* Implement Group Policy
+* Simulate attacks
+* Detect malicious behavior using logs
 
 ---
 
-## OU Structure
+## Network Architecture
 
-- IT
-- HR
-- Finance
-- Sales
-
----
-
-## Skills Demonstrated
-
-- Windows Server Administration
-- Active Directory Management
-- DNS Configuration
-- User Provisioning & Deprovisioning
-- Access Control Implementation
-- Security Hardening Basics
-- PowerShell (AD commands)
+```
+Domain Controller: 192.168.56.10
+Client Machine:    (to be added)
+Attacker Machine:  (to be added)
+Network: Host-Only Internal Lab Network
+Domain: teekay.local
+```
 
 ---
 
-## Project Status
+## Technologies Used
 
-Lab environment is actively being expanded with:
-- Additional client machines
-- Advanced GPO policies
-- Security auditing
-- PowerShell automation scripts
+* Windows Server 2025
+* Active Directory Domain Services
+* DNS Server
+* VirtualBox
+* Windows Client OS (Coming next)
+* Kali Linux (Later phase)
 
 ---
 
-## Author
+## Why This Matters
 
-Emmanuel Temitope Olaleye
+In enterprise environments, Active Directory controls authentication, permissions, and access to resources.
+Compromising Active Directory effectively compromises the entire organization.
 
+This lab replicates a real corporate network to understand both administration and security monitoring perspectives.
