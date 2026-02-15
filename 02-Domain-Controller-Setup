@@ -1,0 +1,69 @@
+# Domain Controller Deployment
+
+## Objective
+
+Deploy a Windows Server as an Active Directory Domain Controller to simulate an enterprise identity infrastructure.
+
+---
+
+## Server Configuration
+
+Installed Active Directory Domain Services role:
+
+```
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+```
+
+Promoted server to domain controller:
+
+```
+Install-ADDSForest -DomainName teekay.local
+```
+
+Server rebooted after promotion.
+
+---
+
+## Network Configuration
+
+Static IP configured:
+
+```
+IP Address: 192.168.56.10
+Subnet Mask: 255.255.255.0
+Gateway: (not required for internal lab)
+DNS Server: 127.0.0.1
+```
+
+---
+
+## Verification
+
+Confirm domain membership:
+
+```
+(Get-WmiObject Win32_ComputerSystem).Domain
+```
+
+Result:
+
+```
+teekay.local
+```
+
+DNS resolution test:
+
+```
+nslookup teekay.local
+```
+
+Result resolves to domain controller IP address.
+
+---
+
+## Security Relevance
+
+Active Directory is the central authentication system in most organizations.
+Attackers target domain controllers because gaining control of AD allows privilege escalation, lateral movement, and persistence across the entire network.
+
+This server now acts as the identity authority for the lab environment.
